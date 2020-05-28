@@ -1,0 +1,27 @@
+<h1>Bewerbungsübersicht</h1>
+
+<br>
+<div>
+  <table>
+    <tr>
+      <th>Firm Name</th>
+      <th>Ansprechpartner</th>
+      <th>Telefonnummer</th>
+      <th>Zustand</th>
+      <th>GoTo</th>
+    </tr>
+    <tr *ngFor="let bwb of bewerbungen">
+      <td>{{bwb.firmName}}</td>
+      <td>{{bwb.ansprechPartner}}</td>
+      <td>{{bwb.telNummer}}</td>
+      <td>{{bwb.zustand}}</td>
+      <td>
+        <button class="btn" [routerLink]="['/bewerbung', bwb.id]">Bearbeiten</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<button class="btn" [routerLink]="['/bewerbung', 'new']">
+  Neue erstellen
+</button>
